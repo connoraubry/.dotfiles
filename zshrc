@@ -41,7 +41,7 @@ HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -99,12 +99,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+
 
 alias vim=nvim
-alias python=python3.12
-alias python3=python3.12
+# alias python=python3.12
+# alias python3=python3.12
+alias python=python3
+alias va="source venv/bin/activate"
+alias vd="deactivate"
+alias vc="python3 -m venv venv"
 
-export PATH="$PATH:/opt/nvim/bin"
+alias cdg="cd $(git rev-parse --show-toplevel)"
+
+#export PATH="$PATH:/opt/nvim/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
