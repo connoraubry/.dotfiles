@@ -28,7 +28,7 @@ PROMPT="╭─${timebracket} ${user_host} ${current_dir} ${git_branch}
 RPS1="%B${return_code}%b"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}‹"
-ZSH_THEME_GIT_PROMPT_SUFFIX="› %f"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%F{yellow}› %f"
 
 ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}✗%f"
 ZSH_THEME_GIT_PROMPT_CLEAN="%F{green}✔%f"
