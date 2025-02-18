@@ -16,3 +16,13 @@
     # light = true
 ; [merge]
 ;     conflictstyle = zdiff3   excludesfile = ~/.dotfiles/gitignore
+[push]
+    autoSetupRemote = true
+[alias]
+    a = add
+    cm = commit -m
+    s = status
+    p = push
+    co = checkout
+    fp = fetch --prune --all
+    l = log --oneline --decorate --graph
