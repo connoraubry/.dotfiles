@@ -7,3 +7,6 @@ mkdir -p ~/.config/tmux
 cp $SCRIPT_DIR/tmux.conf ~/.config/tmux/tmux.conf
 cp $SCRIPT_DIR/zshrc ~/.zshrc
 cp $SCRIPT_DIR/gitconfig ~/.gitconfig
+
+mkdir -p ~/.local/bin
+cp -r $SCRIPT_DIR/local_bin/*  ~/.local/bin/
