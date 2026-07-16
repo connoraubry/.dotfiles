@@ -1,9 +1,6 @@
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/
-[user]
-    name = Connor Aubry
-    email = connoraubry@gmail.com
 [core]
-    editor = vim
+    editor = nvim
     pager = delta
 [column]
     ui = auto

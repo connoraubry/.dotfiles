@@ -7,6 +7,7 @@ mkdir -p ~/.config/tmux
 cp $SCRIPT_DIR/tmux.conf ~/.config/tmux/tmux.conf
 cp $SCRIPT_DIR/zshrc ~/.zshrc
 cp $SCRIPT_DIR/gitconfig ~/.gitconfig
+cp $SCRIPT_DIR/starship.toml ~/.config/
 
 mkdir -p ~/.local/bin
 cp -r $SCRIPT_DIR/local_bin/*  ~/.local/bin/

@@ -1,0 +1,45 @@
+format = '''
+╭─$time $username$hostname $directory$git_branch$git_status
+╰─$python$character'''
+
+add_newline = false
+
+[time]
+disabled = false
+format = '[\[ ](bold blue)[$time](bold red)[ \]](bold blue)'
+time_format = "%R"
+
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_only = true
+format = "[@$hostname]($style) "
+style = "green bold"
+disabled = false
+
+[directory]
+style = "bold cyan"
+format="[$path]($style) "
+
+[git_branch]
+symbol = ""
+format = "[‹$branch]($style)[›]($style) "
+style = "bold yellow"
+
+[git_status]
+up_to_date = '✓(green)'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[python]
+format = "[($virtualenv)]($style)"
+style = "green"
+
+[character]
+success_symbol = '[\$](bold)'
+error_symbol = '[\$](bold red)'
