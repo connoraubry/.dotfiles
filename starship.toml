@@ -37,8 +37,8 @@ diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
 
 [python]
-format = "[($virtualenv)]($style)"
-style = "green"
+format = '[(\($virtualenv\))]($style)'
+style = "bold white"
 
 [character]
 success_symbol = '[\$](bold)'
