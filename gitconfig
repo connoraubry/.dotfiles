@@ -1,6 +1,6 @@
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/
 [core]
-    editor = nvim
+    editor = vim
     pager = delta
 [column]
     ui = auto
@@ -49,6 +49,8 @@
     # https://news.ycombinator.com/item?id=43169435
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
     lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(yellow)- %an%C(reset)%C(auto)%d%C(reset)%n"        "%C(white)%s%C(reset)' --all
+    lgs = !git log --graph --abbrev-commit --decorate --color=always --date=relative --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(yellow)- %an%C(reset)%C(auto)%d%C(reset)%n"        "%C(white)%s%C(reset)' --all | head -n 20
+    lgsm = !git log --graph --abbrev-commit --decorate --color=always --date=relative --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(yellow)- %an%C(reset)%C(auto)%d%C(reset)%n"        "%C(white)%s%C(reset)' --all | head -n 40
     type = cat-file -t
     dump = cat-file -p
     # Lists all local branches that have been deleted on remote
