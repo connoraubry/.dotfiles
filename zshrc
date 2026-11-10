@@ -38,7 +38,6 @@ zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
 
-
 export EDITOR=nvim
 alias ll='ls -alF'
 
@@ -49,17 +48,6 @@ alias python=python3
 alias va="source venv/bin/activate"
 alias vd="deactivate"
 alias vc="python3 -m venv venv"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$PATH:/Users/connoraubry/go/bin"
-export PATH="$PATH:/Users/connoraubry/.bin/zig"
-export PATH="$PATH:$HOME/.local/bin"
-alias ls="gls --group-directories-first --color=auto"
-alias node-ts='node --loader ts-node/esm'
-alias love="/Applications/love.app/Contents/MacOS/love"
 
 eval "$(starship init zsh)"
 
