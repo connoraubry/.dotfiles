@@ -50,7 +50,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 export PATH="$PATH:/Users/connoraubry/go/bin"
 export PATH="$PATH:/Users/connoraubry/.bin/zig"
 export PATH="$PATH:$HOME/.local/bin"
@@ -59,3 +58,6 @@ alias node-ts='node --loader ts-node/esm'
 alias love="/Applications/love.app/Contents/MacOS/love"
 
 eval "$(starship init zsh)"
+
+# machine-specific overrides, not tracked in this repo
+[ -r ~/.zshrc.local ] && source ~/.zshrc.local
