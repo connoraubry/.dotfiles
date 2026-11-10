@@ -1,16 +1,4 @@
-local scripts_to_source=(
-    # ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-    # ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    # ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-)
-
-for script_file in "${scripts_to_source[@]}"; do
-  if [ -r "$script_file" ]; then
-    source "$script_file"
-  else
-    print -P "%F{yellow}Warning:%f Script not found: $script_file"
-  fi
-done
+bindkey -e  # force emacs keymap; zsh's vi-mode heuristic matches "vi" in "nvim"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
@@ -28,6 +16,7 @@ autoload -Uz select-word-style
 select-word-style normal
 zstyle ':zle:*' word-style unspecified
 
+fpath+=("$HOME/.local/share/zsh/site-functions")
 # Initialize completion system
 autoload -Uz compinit
 compinit
@@ -47,7 +36,6 @@ bindkey "^[[B" down-line-or-beginning-search
 
 
 export EDITOR=nvim
-alias ls='ls --color=auto'
 alias ll='ls -alF'
 
 alias vim=nvim
@@ -58,27 +46,16 @@ alias va="source venv/bin/activate"
 alias vd="deactivate"
 alias vc="python3 -m venv venv"
 
-# lazy load nvm
-lazy_nvm(){
-    unset -f nvm node npm npx corepack
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-}
-
-nvm() {lazy_nvm; nvm "$@";}
-node() {lazy_nvm; node "$@";}
-npm() {lazy_nvm; npm "$@";}
-npx() {lazy_nvm; npx "$@";}
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-export PATH="$PATH:/opt/nvim/bin"
 export PATH="$PATH:/Users/connoraubry/go/bin"
 export PATH="$PATH:/Users/connoraubry/.bin/zig"
 export PATH="$PATH:$HOME/.local/bin"
 alias ls="gls --group-directories-first --color=auto"
 alias node-ts='node --loader ts-node/esm'
 alias love="/Applications/love.app/Contents/MacOS/love"
-
 
 eval "$(starship init zsh)"
