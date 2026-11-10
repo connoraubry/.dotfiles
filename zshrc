@@ -17,9 +17,13 @@ select-word-style normal
 zstyle ':zle:*' word-style unspecified
 
 fpath+=("$HOME/.local/share/zsh/site-functions")
-# Initialize completion system
+# Initialize completion system, caching the dump and only rebuilding it once a day
 autoload -Uz compinit
-compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 # Smart case matching - lowercase matches both cases
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Menu selection for multiple matches
